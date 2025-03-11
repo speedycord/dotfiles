@@ -1,0 +1,87 @@
+{
+    "layer": "top", 
+    "position": "top", 
+    "height": 4, 
+    "width": "4",    
+    "spacing": 4, 
+    "margin-top": 8,
+    "margin-left": 5,
+    "margin-right": 5,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["tray", "hyprland/language", "custom/lock", "custom/poweroff", "pulseaudio", "network", "cpu", "memory", "backlight",  "battery", "clock"],
+   
+     "hyprland/workspaces": {
+         "disable-scroll": false,
+         "all-outputs": true,
+         "warp-on-scroll": true,
+         "format": "{name}",
+         "persistent_workspaces": {
+           "1": [],
+           "2": [],
+           "3": [],
+           "4": [],
+           "5": [],
+           "6": [],
+           "7": [],
+           "8": [],
+           "9": []
+          }
+     },
+     "custom/poweroff": {
+        "format": "SHUTDOWN",
+        "on-click": "~/.config/hypr/startup-video.sh;poweroff"
+        },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "RAM {}%"
+    },
+    "backlight": {
+        "format": "BR {percent}%"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "BAT {capacity}%",
+        "format-charging": "CHARGING {capacity}%",
+        "format-plugged": "PLUGGED {capacity}% ",
+        "format-alt": "{time}"
+    },
+    "network": {
+        "format-wifi": "WI-FI: {essid} ({signalStrength}%)",
+        "format-ethernet": "ETH: {ipaddr}/{cidr}  ",
+        "tooltip-format": "{ifname} via {gwaddr}  ",
+        "format-linked": "ETH: {ifname} (No IP)  ",
+        "format-disconnected": "NO CONNECTION",
+        "format-alt": "LOCAL IP: {ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "VOL {volume}%",
+        "format-bluetooth": "BLUETOOTH {volume}%",
+        "format-bluetooth-muted": "BLUETOOTH MUTED",
+        "format-muted": "MUTED. {format_source}",
+        "format-source": "MIC {volume}%",
+        "format-source-muted": "MIC MUTED",
+        "on-click": "pavucontrol"
+    },
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "US",
+        "format-ru": "RUS"
+    },
+    "custom/lock": {
+    "format": "LOCK",
+	"on-click": "gtklock"
+    }
+}
